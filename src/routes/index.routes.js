@@ -3,13 +3,18 @@ import { Router } from "express";
 const router = Router()
 
 router.get("/", (req, res) => {
-    res.send("<h1>hello word</h1>");
+    res.render('index');
   }
 );
 
 router.get("/about", (req, res) => {
-    res.send("about");
+    res.render("about");
   }
+);
+
+router.get("/edit", (req, res) => {
+  res.render("edit");
+}
 );
 
 export default router;
