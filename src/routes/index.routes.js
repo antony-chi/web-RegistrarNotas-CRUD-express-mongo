@@ -1,17 +1,12 @@
 import { Router } from "express";
 import Task from "../models/Task";
+import * as Tasksctl from "../controller/tasks.controller";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-});
+router.get("/", Tasksctl.renderTaks);
 
-router.post("/taskS/add", async (req, res) => {
-  const task = Task(req.body);
-  const taskSaved = await task.save();
-  res.redirect("/");
-});
+router.post("/taskS/add", Tasksctl.createTasks);
 
 router.get("/about", (req, res) => {
   res.render("about");
