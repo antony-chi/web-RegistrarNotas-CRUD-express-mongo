@@ -47,8 +47,13 @@ export const DeleteTaskbById = async (req, res) => {
   res.redirect("/")
 };
 
-export const ToggleCheckDone = (req, res) => {
+export const ToggleCheckDone = async (req, res) => {
   const TaskId = req.params.idTask
-  console.log(TaskId)
-  res.send("donee");
+  //consultamos a la DB por ID
+  const TaskDb = await Task.findById(TaskId);
+  const savedDb = await Task.findByIdAndUpdate(TaskId,{done:!TaskDb.done});
+  //console.log(savedDb)
+ //cambiamos el valor a lo contrario ejemp: si es verdadero > false
+  //const doneDB = await Task.save();//guardamos el cambio en BD
+  res.redirect("/");
 }
