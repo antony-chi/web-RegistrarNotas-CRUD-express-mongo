@@ -1,5 +1,4 @@
 import { Router } from "express";
-import Task from "../models/Task";
 import * as Tasksctl from "../controller/tasks.controller";
 
 const router = Router();
