@@ -1,8 +1,9 @@
 import app from "./app";
 import { connectDB } from "./database";
+import {PORT} from "./configEnv"
 
 //llamamos la conexion
 connectDB()
 
-app.listen(3000);
-console.log("server on port ", 3000);
+app.listen(PORT);
+console.log("server on port ", PORT);
