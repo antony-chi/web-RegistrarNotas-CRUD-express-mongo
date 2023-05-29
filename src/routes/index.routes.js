@@ -5,16 +5,16 @@ const router = Router();
 
 router.get("/", Tasksctl.renderTasks);
 
-router.post("/taskS/add", Tasksctl.createTasks);
+router.post("/task/add", Tasksctl.createTasks);
 
 
-router.get("/edit/:idTask", Tasksctl.renderTaskById);
+router.get("/task/:idTask/edit", Tasksctl.renderTaskById);
 
-router.post("/edit/:idTask", Tasksctl.UpdateTaskbyId);
+router.post("/task/:idTask/edit", Tasksctl.UpdateTaskbyId);
 
-router.get('/delete/:idTask', Tasksctl.DeleteTaskbById);
+router.get('/task/:idTask/delete', Tasksctl.DeleteTaskbById);
 
-router.get('/toggleCheckDone/:idTask',Tasksctl.ToggleCheckDone);
+router.get('/task/:idTask/toggleCheckDone',Tasksctl.ToggleCheckDone);
 
 /*router.get("/about", (req, res) => {
   res.render("about");

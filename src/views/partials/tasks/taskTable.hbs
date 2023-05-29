@@ -16,13 +16,13 @@
       <td>{{description}}</td>
       <td>
         {{#if done}}
-          <a href="/toggleCheckDone/{{_id}}">Undone</a>
+          <a href="/task/{{_id}}/toggleCheckDone">Undone</a>
         {{else}}
-          <a href="/toggleCheckDone/{{_id}}">Done</a>
+          <a href="/task/{{_id}}/toggleCheckDone">Done</a>
         {{/if}}
 
-        <a href="/delete/{{_id}}">Delete</a>
-        <a href="/edit/{{_id}}">Update</a>
+        <a href="/task/{{_id}}/delete">Delete</a>
+        <a href="/task/{{_id}}/edit">Update</a>
       </td>
     </tr>
   {{/each}}
