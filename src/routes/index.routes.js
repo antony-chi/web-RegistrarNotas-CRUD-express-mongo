@@ -4,17 +4,21 @@ import * as Tasksctl from "../controller/tasks.controller";
 
 const router = Router();
 
-router.get("/", Tasksctl.renderTaks);
+router.get("/", Tasksctl.renderTasks);
 
 router.post("/taskS/add", Tasksctl.createTasks);
 
-router.get("/about", (req, res) => {
+
+router.get("/edit/:idTask", Tasksctl.renderTaskById);
+
+router.post("/edit/:idTask", Tasksctl.UpdateTaskbyId);
+
+router.get('/delete/:idTask', Tasksctl.DeleteTaskbById);
+
+/*router.get("/about", (req, res) => {
   res.render("about");
 });
-
-router.get("/edit/:idTask", Tasksctl.getEditTask);
-
-router.post('/edit/:idTask', Tasksctl.UpdateTaskbyId)
+*/
 
 
 export default router;

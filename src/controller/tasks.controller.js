@@ -1,12 +1,14 @@
 import Task from "../models/Task";
 
-export const renderTaks = async (req, res) => {
+//mostrar la lista de tareas desde la pagina principal
+export const renderTasks = async (req, res) => {
 
   const tasksDB = await Task.find().lean()
   //console.log(tasksDB)
   res.render("index", { tasks: tasksDB});
 };
 
+//crear tarea (create add)
 export const createTasks = async (req, res) => {
     const task = Task(req.body);
     const taskSaved = await task.save();
@@ -15,7 +17,7 @@ export const createTasks = async (req, res) => {
 };
 
 //obtener tarea por ID para cargar los datos en el formulario a mostrar 
-export const getEditTask = async (req, res) => {
+export const renderTaskById = async (req, res) => {
     try {
     const idTask = req.params.idTask
     console.log(idTask)
@@ -36,4 +38,11 @@ export const UpdateTaskbyId = async (req, res) => {
   await Task.findByIdAndUpdate(idTask,req.body)
 
   res.redirect("/")
-}
+};
+
+export const DeleteTaskbById = async (req, res) => {
+  const Taskid = req.params.idTask
+  console.log("deleted ",Taskid);
+  await Task.findByIdAndDelete(Taskid);
+  res.redirect("/")
+};
