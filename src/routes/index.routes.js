@@ -15,6 +15,8 @@ router.post("/edit/:idTask", Tasksctl.UpdateTaskbyId);
 
 router.get('/delete/:idTask', Tasksctl.DeleteTaskbById);
 
+router.get('/toggleCheckDone',Tasksctl.ToggleCheckDone);
+
 /*router.get("/about", (req, res) => {
   res.render("about");
 });

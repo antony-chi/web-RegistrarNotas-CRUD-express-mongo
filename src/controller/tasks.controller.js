@@ -46,3 +46,8 @@ export const DeleteTaskbById = async (req, res) => {
   await Task.findByIdAndDelete(Taskid);
   res.redirect("/")
 };
+
+export const ToggleCheckDone = (req, res) => {
+  console.log("llegaste a controlador ToggleCheckDone")
+  res.send("donee");
+}
