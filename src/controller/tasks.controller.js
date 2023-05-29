@@ -48,6 +48,7 @@ export const DeleteTaskbById = async (req, res) => {
 };
 
 export const ToggleCheckDone = (req, res) => {
-  console.log("llegaste a controlador ToggleCheckDone")
+  const TaskId = req.params.idTask
+  console.log(TaskId)
   res.send("donee");
 }
